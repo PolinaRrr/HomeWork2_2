@@ -33,7 +33,7 @@ public class Main {
         }
 
         try {
-            int result=checkAndSum(errorArr);
+            int result = checkAndSum(errorArr);
             System.out.println("Проверка некорректного массива: сумма элементов -  " + result);
         } catch (MyArraySizeException e) {
             System.out.println(e.getMessage());
@@ -43,9 +43,9 @@ public class Main {
         }
 
         try {
-            int result=checkAndSum(errorDataArr);
+            int result = checkAndSum(errorDataArr);
             checkAndSum(errorDataArr);
-            System.out.println("Проверка некорректных данных: сумма элементов -  " + result );
+            System.out.println("Проверка некорректных данных: сумма элементов -  " + result);
         } catch (MyArraySizeException e) {
             System.out.println(e.getMessage());
 
@@ -54,6 +54,13 @@ public class Main {
         }
     }
 
+    /**
+     * метод проверяет размерность массива и суммирует все элементы, преобразовав в int
+     * @param a  массив
+     * @return сумму элементов массива
+     * @throws MyArraySizeException
+     * @throws MyArrayDataException
+     */
     public static int checkAndSum(String[][] a) throws MyArraySizeException, MyArrayDataException {
         if (a.length != 4 || a[0].length != 4 || a[1].length != 4 || a[2].length != 4 || a[3].length != 4) {
             throw new MyArraySizeException();
